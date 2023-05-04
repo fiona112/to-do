@@ -1,0 +1,58 @@
+ <ion-card>
+    <ion-card-header>
+      <ion-card-title>TO-DO</ion-card-title>
+        <ion-label>{{currentDate | date: 'dd/MM/yyyy'}}</ion-label>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-content>
+
+    <ion-card *ngFor="let item of todoList" class="ion-margin">
+      <ion-card-header>
+        <ion-chip>
+        <ion-card-subtitle *ngIf="item.itemCategory === 'Personal'" color="success">
+          {{item.itemCategory}}
+        </ion-card-subtitle>
+        <ion-card-subtitle *ngIf="item.itemCategory === 'Work'" color="tertiary">
+          {{item.itemCategory}}
+        </ion-card-subtitle>
+      </ion-chip>
+
+        <ion-item>
+          <ion-icon *ngIf="item.itemCategory === 'Personal'" color="success" size="small" name="heart-circle-outline"></ion-icon>
+          <ion-icon *ngIf="item.itemCategory === 'Work'" color="tertiary" size="small" name="heart-circle-outline"></ion-icon>
+          <ion-label>{{item.itemName}}</ion-label>
+        </ion-item>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-label>Due {{item.itemDueDate| date: 'fullDate' }}</ion-label>
+      </ion-card-content>
+
+      <ion-row>
+
+        <ion-item>
+          <ion-icon name="checkmark-outline"></ion-icon>
+          <ion-button fill="clear" (click)="complete()">Complete</ion-button>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon name="trash-outline"></ion-icon>
+          <ion-button fill="clear" (click)="remove()">Remove</ion-button>
+        </ion-item>
+
+      </ion-row>
+
+    </ion-card>
+  </ion-content>
+
+
+
+  <ion-fab vertical="bottom" horizontal="end"> 
+    <ion-fab-button color="light" (click)="addTask()"> 
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-button fill="clear" type="button" (click)="openComplete()">Completed</ion-button>
+
