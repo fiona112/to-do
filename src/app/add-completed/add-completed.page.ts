@@ -14,8 +14,6 @@ export class AddCompletedPage implements OnInit {
 
   static listMethod(list: []) {
     this.testing = list
-    
-   
   }
   
   ngOnInit() {
