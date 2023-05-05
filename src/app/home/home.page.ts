@@ -12,7 +12,8 @@ import { AddCompletedPage } from '../add-completed/add-completed.page';
 })
 export class HomePage {
 
-  todoList : any  = []
+  todoList : any  = [];
+  completedTasks: any = [];
 
   public currentDate: string;
 
@@ -27,9 +28,16 @@ export class HomePage {
 
     modal.onDidDismiss().then(newTaskObj => {
       this.todoList.push(newTaskObj.data)
+      console.log(this.todoList)
     })
 
+
     return await modal.present()
+
+  }
+
+  added(event: any){
+    console.log(event);
   }
 
   remove(){
@@ -37,15 +45,18 @@ export class HomePage {
   }
 
   async openComplete(){
+    console.log(this.completedTasks)
     const modal = await this.modalCtrl.create({
-      component: AddCompletedPage
+      component: AddCompletedPage, 
+      componentProps: {completedTasks: this.completedTasks} 
     })
     return await modal.present()
   }
 
-  complete(){
-    AddCompletedPage.listMethod(this.todoList)
-    this.todoList = []
+  complete(i: number){
+    this.completedTasks.push(this.todoList[i])
+    this.todoList = this.todoList.filter((_: any,index: any) => index !== i )
+    
   }
   
 }

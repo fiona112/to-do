@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -13,7 +13,7 @@ export class AddTaskPage implements OnInit {
   taskDate: any
   taskCategory: any
   taskObject: any
-
+  completed = false;
   constructor(public modalCtrl:ModalController) { }
 
   ngOnInit() {
@@ -30,8 +30,10 @@ export class AddTaskPage implements OnInit {
   addTask(){
     this.taskObject = ({itemName:this.taskName, 
                         itemDueDate:this.taskDate, 
-                        itemCategory:this.taskCategory})
+                        itemCategory:this.taskCategory,
+                        itemCompleted:this.completed})
 
-      this.dismiss()
+      this.dismiss();
   }
+  
 }

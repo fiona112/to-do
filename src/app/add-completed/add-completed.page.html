@@ -13,7 +13,8 @@
 </ion-header>
 
 <ion-card>
-  <ion-label>
-    {{testing.map}}
-  </ion-label>
+  <div *ngFor="let task of completedTasks">
+    <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
+    <ion-label class="taskFont">{{task?.itemName}}</ion-label>
+  </div>
 </ion-card>

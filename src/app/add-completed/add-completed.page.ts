@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 
 @Component({
@@ -7,14 +7,11 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./add-completed.page.scss'],
 })
 export class AddCompletedPage implements OnInit {
-  
+  @Input() testing = '';
+  @Input() completedTasks: any | null = [];
 
-  static testing: any
   constructor(public modalCtrl:ModalController) { }
-
-  static listMethod(list: []) {
-    this.testing = list
-  }
+ 
   
   ngOnInit() {
   }
