@@ -1,11 +1,12 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Completed Task</ion-title>
+    <ion-title style="font-weight: 600; color:rgb(109, 231, 135)">Completed Task</ion-title>
     <ion-icon 
       name="close-circle-outline" 
       slot="end"
       size="large"
       class="ion-padding"
+      color="success"
       (click)="dismiss()"
       >
     </ion-icon>
@@ -14,7 +15,7 @@
 
 <ion-card>
   <div *ngFor="let task of completedTasks">
-    <ion-icon name="checkmark-circle-outline" size="large"></ion-icon>
-    <ion-label class="taskFont">{{task?.itemName}}</ion-label>
+    <ion-icon name="checkmark-circle-outline" size="large" color="success" class="ion-padding-start"></ion-icon>
+    <ion-label class="taskFont" style="color:rgb(109, 231, 135)">{{task?.itemName}}</ion-label>
   </div>
 </ion-card>

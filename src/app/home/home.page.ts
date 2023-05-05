@@ -40,8 +40,8 @@ export class HomePage {
     console.log(event);
   }
 
-  remove(){
-    this.todoList = []
+  remove(i: number){
+    this.todoList = this.todoList.filter((_: any,index: any) => index !== i )
   }
 
   async openComplete(){
