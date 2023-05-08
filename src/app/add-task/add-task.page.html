@@ -44,7 +44,7 @@
     </ion-item>
 
     <ion-item>
-      <ion-chip *ngFor="let category of categories; let i = index" (click)="selectedCategory(i)">
+      <ion-chip color="success" *ngFor="let category of categories; let i = index" (click)="selectedCategory(i)">
         <ion-label>{{category}}</ion-label>
       </ion-chip>
     </ion-item>

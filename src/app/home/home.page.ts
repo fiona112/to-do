@@ -41,22 +41,21 @@ export class HomePage {
   }
 
   remove(i: number){
-    this.todoList = this.todoList.filter((_: any,index: any) => index !== i )
+    this.todoList = this.todoList.filter((_: any,index: any) => index !== i );
   }
 
   async openComplete(){
-    console.log(this.completedTasks)
+    console.log(this.completedTasks);
     const modal = await this.modalCtrl.create({
       component: AddCompletedPage, 
       componentProps: {completedTasks: this.completedTasks} 
     })
-    return await modal.present()
+    return await modal.present();
   }
 
   complete(i: number){
-    this.completedTasks.push(this.todoList[i])
-    this.todoList = this.todoList.filter((_: any,index: any) => index !== i )
-    
+    this.completedTasks.push(this.todoList[i]);
+    this.todoList = this.todoList.filter((_: any,index: any) => index !== i );
   }
   
 }

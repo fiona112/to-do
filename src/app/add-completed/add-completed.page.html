@@ -13,9 +13,13 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-card>
-  <div *ngFor="let task of completedTasks">
-    <ion-icon name="checkmark-circle-outline" size="large" color="success" class="ion-padding-start"></ion-icon>
-    <ion-label class="taskFont" style="color:rgb(109, 231, 135)">{{task?.itemName}}</ion-label>
-  </div>
-</ion-card>
+<ion-content>
+  <ion-card>
+    <ion-list *ngFor="let task of completedTasks">
+      <ion-item>
+        <ion-icon name="checkmark-circle-outline" size="large" color="success" class="ion-padding-start"></ion-icon>
+        <ion-text class="taskFont" style="color:rgb(109, 231, 135)">{{task?.itemName}}</ion-text>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-content>
