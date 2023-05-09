@@ -45,7 +45,6 @@ export class HomePage {
   }
 
   async openComplete(){
-    console.log(this.completedTasks);
     const modal = await this.modalCtrl.create({
       component: AddCompletedPage, 
       componentProps: {completedTasks: this.completedTasks} 

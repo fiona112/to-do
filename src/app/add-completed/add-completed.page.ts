@@ -7,7 +7,6 @@ import { ModalController } from '@ionic/angular';
   styleUrls: ['./add-completed.page.scss'],
 })
 export class AddCompletedPage implements OnInit {
-  
   @Input() completedTasks: any | null = [];
 
   constructor(public modalCtrl:ModalController) { }
