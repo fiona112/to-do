@@ -15,7 +15,7 @@ export class HomePage {
   todoList : any  = [];
   completedTasks: any = [];
 
-  public currentDate: string;
+  currentDate: string;
 
   constructor(public modalCtrl:ModalController) {
     this.currentDate = (Date()).toString();
